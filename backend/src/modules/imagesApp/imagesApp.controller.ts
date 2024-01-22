@@ -38,7 +38,7 @@ export async function getImage(req: Request, res: Response) {
 
 export async function createImage(req: Request, res: Response) {
   try {
-    const { name } = req.body;
+    const { name, data: dataImage } = req.body;
 
     // todo, verificar que la imagen sea jpg, png o gif
     // todo, subir imagen a cloudinary y recuperar la url
