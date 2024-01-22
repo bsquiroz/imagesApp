@@ -7,4 +7,6 @@ export const envs = {
   CLOUD_NAME_CLOUDINARY: env.get("CLOUD_NAME_CLOUDINARY").required().asString(),
   API_KEY_CLOUDINARY: env.get("API_KEY_CLOUDINARY").required().asString(),
   API_SECRET_CLOUDINARY: env.get("API_SECRET_CLOUDINARY").required().asString(),
+  FRONT_URL_PRO: env.get("FRONT_URL_PRO").required().asString(),
+  FRONT_URL_DEV: env.get("FRONT_URL_DEV").required().asString(),
 };
