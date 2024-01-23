@@ -1,4 +1,5 @@
 import React from "react";
+import { Toaster } from "@/components/ui/sonner";
 
 export const Layout = ({ children }: React.PropsWithChildren) => {
   return (
@@ -6,6 +7,7 @@ export const Layout = ({ children }: React.PropsWithChildren) => {
       <section className="min-h-screen max-w-2xl m-auto p-5 flex justify-center items-center">
         {children}
       </section>
+      <Toaster richColors />
     </main>
   );
 };

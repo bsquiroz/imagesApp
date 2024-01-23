@@ -10,3 +10,8 @@ export const getImage = async (id: string): Promise<Image> => {
   const { data } = await imagesAppApi<Image>(`/images/${id}`);
   return data;
 };
+
+export const createImage = async (formData: FormData): Promise<Image> => {
+  const { data } = await imagesAppApi.post<Image>("/images", formData);
+  return data;
+};
