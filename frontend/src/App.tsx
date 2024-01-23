@@ -23,7 +23,9 @@ export const App = () => {
     <Layout>
       {showModal ? (
         <Dialog>
-          <DialogTrigger>Show library</DialogTrigger>
+          <DialogTrigger>
+            <span className="font-bold text-2xl">Show library</span>
+          </DialogTrigger>
           <DialogContent>
             <DialogHeader>
               <DialogTitle className="text-primary">
