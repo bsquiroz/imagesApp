@@ -1,6 +1,8 @@
+import { Application } from "express";
+
 import cors from "cors";
 
-export function enableCors(app, acceptedOrigins) {
+export function enableCors(app: Application, acceptedOrigins: string[]) {
   app.use(
     cors({
       origin: (origin, callback) => {

@@ -1,0 +1,67 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "ImagesApi",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/v1/images": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Retorna todas las imagenes"
+          }
+        }
+      },
+      "post": {
+        "description": "objeto json que se encarga de crear una imagen",
+        "required": true,
+        "requestBody": {
+          "description": "objeto json que se encarga de crear una imagen",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "Nombre de la imagen",
+                    "example": "Ts the best"
+                  },
+                  "file": {
+                    "type": "File",
+                    "description": "Es un objeto de tipo File",
+                    "example": "File.png"
+                  }
+                },
+                "required": ["name", "data"]
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/api/v1/images/{id}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna una imagen segun ID"
+          },
+          "404": {
+            "description": "Si no encuentra ninguna imagen con ese ID"
+          }
+        }
+      }
+    }
+  }
+}
