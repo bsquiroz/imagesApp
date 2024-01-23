@@ -24,7 +24,7 @@ export const LibraryImg = () => {
     return <div>There are no images to show, go upload images.</div>;
 
   return (
-    <ScrollArea className="h-[300px] w-[350px] rounded-md border p-4">
+    <ScrollArea className="h-[300px] w-full rounded-md border p-4">
       <section className="grid grid-cols-2 gap-2">
         {queryLibraryImages.data?.data.map((image, i) => (
           <article
