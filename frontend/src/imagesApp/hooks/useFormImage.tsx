@@ -62,7 +62,7 @@ export const useFormImage = () => {
 
     const typeFile = e.target.files[0].type.split("/")[1];
 
-    if (!["png", "jpg", "gift"].includes(typeFile.toLowerCase())) {
+    if (!["png", "jpg", "gif"].includes(typeFile.toLowerCase())) {
       if (fileNameRef.current) {
         fileNameRef.current.value = "";
         fileNameRef.current.files = null;
