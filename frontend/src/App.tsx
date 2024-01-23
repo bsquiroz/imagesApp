@@ -14,9 +14,11 @@ import { LibraryImg } from "./imagesApp/components/libraryImg";
 import { FormImage } from "./imagesApp/components/formImage";
 import { ImageSelect } from "./imagesApp/components/imageSelect";
 import { useImageStore } from "./imagesApp/store/imageStore";
+import { AnimationSping } from "./components/AnimationSping";
 
 export const App = () => {
   const showModal = useImageStore((state) => state.showModal);
+
   return (
     <Layout>
       {showModal ? (
@@ -31,7 +33,10 @@ export const App = () => {
 
             <Tabs defaultValue="account">
               <TabsList>
-                <TabsTrigger value="library">Show images</TabsTrigger>
+                <TabsTrigger value="library">
+                  showAnimationTab
+                  <AnimationSping />
+                </TabsTrigger>
                 <TabsTrigger value="upload">Upload image</TabsTrigger>
               </TabsList>
               <TabsContent value="library">

@@ -6,6 +6,7 @@ import { useFormImage } from "@/imagesApp/hooks/useFormImage";
 import { FormDataCreateImg } from "@/imagesApp/interfaces/formDataCreateImg";
 
 import { toast } from "sonner";
+import { useImageStore } from "@/imagesApp/store/imageStore";
 
 const initialValues: FormDataCreateImg = {
   name: "",
@@ -14,6 +15,10 @@ const initialValues: FormDataCreateImg = {
 
 export const FormImage = () => {
   const [values, setValues] = useState<FormDataCreateImg>(initialValues);
+
+  const setShowAnimationTab = useImageStore(
+    (state) => state.setShowAnimationTab
+  );
   const fileNameRef = useRef<HTMLInputElement>(null);
   const { mutationCreateImg } = useFormImage();
 
@@ -43,6 +48,8 @@ export const FormImage = () => {
         fileNameRef.current.value = "";
         fileNameRef.current.files = null;
       }
+
+      setShowAnimationTab(true);
     });
   };
 

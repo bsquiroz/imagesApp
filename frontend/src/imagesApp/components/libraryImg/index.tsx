@@ -1,6 +1,7 @@
 import { useLibraryImages } from "@/imagesApp/hooks/useLibraryImages";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useImageStore } from "@/imagesApp/store/imageStore";
+import { useEffect } from "react";
 
 export const LibraryImg = () => {
   const { queryLibraryImages } = useLibraryImages();
@@ -12,6 +13,16 @@ export const LibraryImg = () => {
     setImgId(id);
     setShowModal(false);
   };
+
+  const showAnimationTab = useImageStore((state) => state.showAnimationTab);
+  const setShowAnimationTab = useImageStore(
+    (state) => state.setShowAnimationTab
+  );
+
+  useEffect(() => {
+    if (!showAnimationTab) return;
+    setShowAnimationTab(false);
+  }, [setShowAnimationTab, showAnimationTab]);
 
   if (queryLibraryImages.isLoading) return <div>Loading...</div>;
 
