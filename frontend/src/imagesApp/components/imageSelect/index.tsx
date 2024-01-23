@@ -9,17 +9,17 @@ export const ImageSelect = () => {
   const setImgId = useImageStore((state) => state.setImgId);
   const setShowModal = useImageStore((state) => state.setShowModal);
 
+  const handleClick = () => {
+    setImgId();
+    setShowModal(true);
+  };
+
   if (queryLibraryImage.isLoading) return <div>Loading...</div>;
 
   if (!queryLibraryImage.data?.status)
     return <div>Something went wrong while we were waiting for the image.</div>;
 
   const image = queryLibraryImage.data.data;
-
-  const handleClick = () => {
-    setImgId();
-    setShowModal(true);
-  };
 
   return (
     <article className="grid gap-2">
