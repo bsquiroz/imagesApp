@@ -36,7 +36,7 @@ export const App = () => {
             <Tabs defaultValue="account">
               <TabsList>
                 <TabsTrigger value="library">
-                  showAnimationTab
+                  Show library
                   <AnimationSping />
                 </TabsTrigger>
                 <TabsTrigger value="upload">Upload image</TabsTrigger>

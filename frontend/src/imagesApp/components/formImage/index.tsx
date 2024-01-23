@@ -53,6 +53,24 @@ export const FormImage = () => {
     });
   };
 
+  const handleUploadFile = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!e.target.files?.length) return;
+
+    const kilobyte = e.target.files[0].size / 1024;
+
+    if (kilobyte > 50) {
+      if (fileNameRef.current) {
+        fileNameRef.current.value = "";
+        fileNameRef.current.files = null;
+      }
+      return toast.warning("Warning, The file must be less than 50mb");
+    }
+
+    toast.success("Success, file compatible and loaded");
+
+    handleOnchage("file", e.target.files[0]);
+  };
+
   return (
     <section>
       <form className="flex flex-col gap-5" onSubmit={(e) => handleSubmit(e)}>
@@ -73,10 +91,7 @@ export const FormImage = () => {
             id="file"
             name="file"
             type="file"
-            onChange={(e) => {
-              if (!e.target.files?.length) return;
-              handleOnchage("file", e.target.files[0]);
-            }}
+            onChange={handleUploadFile}
             ref={fileNameRef}
           />
         </div>
