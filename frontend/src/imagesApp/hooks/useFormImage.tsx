@@ -60,6 +60,16 @@ export const useFormImage = () => {
 
     const kilobyte = e.target.files[0].size / 1024;
 
+    const typeFile = e.target.files[0].type.split("/")[1];
+
+    if (!["png", "jpg", "gift"].includes(typeFile.toLowerCase())) {
+      if (fileNameRef.current) {
+        fileNameRef.current.value = "";
+        fileNameRef.current.files = null;
+      }
+      return toast.error("Error, Only files .png, .jpg or .gift");
+    }
+
     if (kilobyte > 50) {
       if (fileNameRef.current) {
         fileNameRef.current.value = "";
