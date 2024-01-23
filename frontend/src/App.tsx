@@ -8,20 +8,16 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
-import { Button } from "./components/ui/button";
-
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-import { LibraryImg } from "./components/libraryImg";
-import { FormImage } from "./components/formImage";
+import { LibraryImg } from "./imagesApp/components/libraryImg";
+import { FormImage } from "./imagesApp/components/formImage";
 
 export const App = () => {
   return (
     <Layout>
       <Dialog>
-        <DialogTrigger>
-          <Button>Show library</Button>
-        </DialogTrigger>
+        <DialogTrigger>Show library</DialogTrigger>
         <DialogContent>
           <DialogHeader>
             <DialogTitle className="text-primary">
