@@ -1,11 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import { getImages } from "../services/actions";
 
-export const useLibraryImage = () => {
-  const queryLibraryImage = useQuery({
+export const useLibraryImages = () => {
+  const queryLibraryImages = useQuery({
     queryKey: ["libraryImage"],
     queryFn: () => getImages(),
   });
 
-  return { queryLibraryImage };
+  return { queryLibraryImages };
 };
